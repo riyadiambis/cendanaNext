@@ -14,5 +14,9 @@ Thumbs.db
 *.bak
 *.tmp
 *~
-*.md
 
+# Node modules (jika ada)
+node_modules/
+
+# File konfigurasi lokal
+config.local.*
