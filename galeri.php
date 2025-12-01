@@ -22,7 +22,7 @@ $companyInfoData = [
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="icons.css">
 </head>
-<body>
+<body class="page-galeri">
     <!-- Header Navigation -->
     <header>
         <div class="container header-container">

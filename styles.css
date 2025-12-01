@@ -460,6 +460,178 @@ nav {
 }
 
 /* ============================================
+   PAGE-SPECIFIC SPACING OVERRIDES (GALERI & FAQ)
+   ============================================ */
+
+.page-galeri .hero,
+.page-faq .hero {
+    /* Make Galeri & FAQ top section visually identical to Pemesanan */
+    position: relative;
+    height: auto;
+    min-height: 440px;
+    padding: calc(var(--spacing-2xl) + 70px) 0 var(--spacing-xl);
+    margin-top: 70px;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
+    overflow: hidden;
+}
+
+.page-galeri .hero-title,
+.page-faq .hero-title {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.page-galeri .hero-description,
+.page-faq .hero-description {
+    margin-bottom: var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-galeri .section-header,
+.page-faq .section-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.page-galeri section,
+.page-faq section {
+    padding: var(--spacing-2xl) 0;
+}
+
+/* Subtle grid overlay to match brand style */
+/* Decorative circles overlay to mirror Pemesanan without HTML changes */
+.page-galeri .hero::before,
+.page-faq .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid2gf" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid2gf)" /></svg>');
+    opacity: 0.25;
+}
+
+.page-galeri .hero::after,
+.page-faq .hero::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    filter: blur(6px);
+    box-shadow: 0 0 0 0 rgba(255,255,255,0.06);
+}
+
+/* Additional circles via child pseudo-elements for variety */
+.page-galeri .hero-overlay::before,
+.page-faq .hero-overlay::before {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 12%;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    filter: blur(6px);
+}
+
+.page-galeri .hero-overlay::after,
+.page-faq .hero-overlay::after {
+    content: '';
+    position: absolute;
+    top: 55%;
+    right: 30%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    filter: blur(6px);
+}
+
+/* ============================================
+   BOOKING HERO (PEMESANAN) STYLES
+   ============================================ */
+
+.booking-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
+    padding: calc(var(--spacing-2xl) + 70px) 0 var(--spacing-xl);
+    margin-top: 70px;
+}
+
+.booking-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid2)" /></svg>');
+    opacity: 0.25;
+}
+
+.booking-hero .booking-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    color: var(--color-white);
+}
+
+.booking-hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-white);
+}
+
+.booking-hero-subtitle {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.decoration-circle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    filter: blur(6px);
+}
+
+.circle-1 { top: 20%; left: 10%; }
+.circle-2 { bottom: 15%; right: 12%; }
+.circle-3 { top: 55%; right: 30%; }
+
+@media (max-width: 768px) {
+    .booking-hero { padding: calc(var(--spacing-xl) + 70px) 0 var(--spacing-lg); }
+    .booking-hero-title { font-size: 2rem; }
+    .booking-hero-subtitle { font-size: 1rem; }
+}
+
+/* Tighten spacing under booking filter on Pemesanan */
+.page-pemesanan .booking-filter-section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.page-pemesanan .filter-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* ============================================
    SECTIONS
    ============================================ */
 
@@ -1268,8 +1440,9 @@ section {
    ============================================ */
 
 .booking-filter-section {
-    background: var(--color-light-gray);
+    background: linear-gradient(180deg, #EFF1F4 0%, #E9ECEF 100%);
     padding: var(--spacing-2xl) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 .filter-container {
@@ -1278,6 +1451,18 @@ section {
 
 .filter-header {
     margin-bottom: var(--spacing-2xl);
+    position: relative;
+}
+
+.filter-header::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--color-primary);
+    opacity: 0.15;
+    margin: var(--spacing-md) auto 0;
 }
 
 .filter-title {
@@ -1375,8 +1560,9 @@ section {
 
 .booking-list-section {
     padding: var(--spacing-3xl) 0;
-    background: var(--color-white);
+    background: #FFFFFF;
     min-height: 600px;
+    border-top: 1px solid rgba(0,0,0,0.06);
 }
 
 .booking-list-section .container {
@@ -1390,6 +1576,18 @@ section {
     text-align: center;
     margin-bottom: var(--spacing-3xl);
     animation: fadeInUp 0.6s ease;
+    position: relative;
+}
+
+.section-header-booking::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--color-primary);
+    opacity: 0.2;
+    margin: var(--spacing-md) auto 0;
 }
 
 .section-title-booking {
@@ -1826,7 +2024,7 @@ section {
    ============================================ */
 
 .faq-booking-section {
-    background: var(--color-white);
+    background: linear-gradient(180deg, #EEF1F5 0%, #E5E8EC 100%);
     padding: var(--spacing-3xl) 0;
 }
 
@@ -1847,21 +2045,26 @@ section {
 
 .faq-booking-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
     margin-bottom: var(--spacing-2xl);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-lg);
 }
 
 .faq-booking-item {
-    background: var(--color-white);
-    border: 1px solid var(--color-light-gray);
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: var(--radius-lg);
     overflow: hidden;
     transition: all 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
 .faq-booking-item:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
 }
 
 .faq-booking-item.active {
@@ -1873,7 +2076,7 @@ section {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     background: none;
     border: none;
     cursor: pointer;
@@ -1881,6 +2084,11 @@ section {
     color: var(--color-dark);
     text-align: left;
     transition: color 0.3s ease;
+}
+
+/* Increase question font size for better readability */
+.faq-booking-question span {
+    font-size: 1.1rem;
 }
 
 .faq-booking-question:hover {
@@ -1901,13 +2109,16 @@ section {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    padding: 0 var(--spacing-lg);
-    background: var(--color-light-gray);
+    padding: 0 var(--spacing-md);
+    background: #FFFFFF;
+    visibility: hidden;
 }
 
 .faq-booking-item.active .faq-booking-answer {
-    max-height: 500px;
-    padding: var(--spacing-lg);
+    max-height: 800px;
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+    background: #FFFFFF;
+    visibility: visible;
 }
 
 .faq-booking-answer p {
